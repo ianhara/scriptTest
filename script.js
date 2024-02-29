@@ -25,6 +25,7 @@ function showQuestion(){
     var answersEl = document.getElementById("answers")
     
     var questionEl = document.getElementById("question")
+    
     questionEl.textContent = questions[questionIndex].questionText
 
     for(var i =0; i<questions[0].answers.length; i++){
@@ -40,8 +41,23 @@ function showQuestion(){
     }
 }
 
+function startTimer(){
+    var displayTimer = document.getElementById("timer")
+    var interval = setInterval(function(){
+        quizTime--
+        displayTimer.textContent = "time left: " + quizTime + "seconds"
+        if (quizTime <= 0){
+            clearInterval(interval)
+            displayFinal()
+        }
+    }, 1000)
+}
+
+
+
 function startTime(){
     showQuestion()
+    startTimer()
     console.log(questions[questionIndex].questionText)
     
 }
@@ -61,10 +77,3 @@ startBtn.addEventListener("click", startTime)
 
 
 
-function displayFinal(){
-    
-}
-
-function questionScore(){
-
-}
