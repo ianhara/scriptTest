@@ -1,10 +1,13 @@
 var quizTime = 120
-var questionIndex = 0
+var startBtn = document.getElementById("startBtn")
 
+startBtn.addEventListener("click", startTime)
+var questionIndex = 0
+//set up questions as objects in an array 
 var questions = [
     {
-        questionText: "question1" ,
-        answers: ["option1", "option2", "option3", "option4"],
+        questionText: "what line of code is used to link a local jscript file in html" ,
+        answers: ["<jscript>a href = /jscript </jscript>", "<script src = script,js</script>", "<script src = script.js</script>", "link script = true"],
         key: "option3"
     },
     {
@@ -22,21 +25,27 @@ var questions = [
 
 
 function showQuestion(){
+    //element for answer buttons
     var answersEl = document.getElementById("answers")
-    
+    //element for the question text
     var questionEl = document.getElementById("question")
-    
-    questionEl.textContent = questions[questionIndex].questionText
+    //current question from array
+    var currentQuestion = questions[questionIndex]
+     // clearing the page of any leftover answers
+     answersEl.innerHTML=" "
 
-    for(var i =0; i<questions[0].answers.length; i++){
-          // Creates element based on tag entered by user
+    //display question of question index
+    questionEl.textContent = currentQuestion.questionText
+
+    for(var i =0; i<currentQuestion.answers.length; i++){
+        
   var button = document.createElement("button");
 
-  // Adds text content to created tag
-  button.textContent = questions[0].answers[i]
+  
+  button.textContent = currentQuestion.answers[i]
   
   
-  // Appends tag as child of document body
+  
   answersEl.appendChild(button);
     }
 }
@@ -62,9 +71,10 @@ function startTime(){
     
 }
 
-var startBtn = document.getElementById("startBtn")
-
-startBtn.addEventListener("click", startTime)
+function displayFinal(){
+    var final = document.getElementById("final")
+    
+}
 
 
 
