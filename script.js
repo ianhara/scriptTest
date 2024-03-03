@@ -14,7 +14,7 @@ var questions = [
       "<script src = script.js</script>",
       "link script = true",
     ],
-    key: "option3",
+    key: "<script src = script.js</script>",
   },
   {
     questionText: "question2",
@@ -29,6 +29,7 @@ var questions = [
 ];
 
 function showQuestion() {
+
   //element for answer buttons
   var answersEl = document.getElementById("answers");
   //element for the question text
@@ -48,6 +49,19 @@ function showQuestion() {
     button.textContent = currentQuestion.answers[i];
     //append to be displayed
     answersEl.appendChild(button);
+
+    //on click see if answer == key
+    button.addEventListener("click", function(event){
+        var choice = event.target.textContent
+        var correct = currentQuestion.key
+
+        if(choice === correct){
+            alert("correct")
+        }else{
+            alert("incorrect")
+        }
+    })
+
   }
 }
 //starts timer and stops upon 0 time left
