@@ -1,4 +1,9 @@
-var quizTime = 120;
+    //global vars
+  var quizTime = 120;
+  //element for answer buttons
+  var answersEl = document.getElementById("answers");
+  //element for the question text
+  var questionEl = document.getElementById("question");
 var startBtn = document.getElementById("startBtn");
 //if start button clicked run startTime
 startBtn.addEventListener("click", startTime);
@@ -47,10 +52,7 @@ var questions = [
 
 function showQuestion() {
 
-  //element for answer buttons
-  var answersEl = document.getElementById("answers");
-  //element for the question text
-  var questionEl = document.getElementById("question");
+
   //current question from array
   var currentQuestion = questions[questionIndex];
   // clearing the page of any leftover answers
