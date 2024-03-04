@@ -1,0 +1,16 @@
+h1{
+    text-align: center;
+}
+#quiz{
+    text-align: center;
+}
+#startBtn{
+    display:block;
+    margin: 0 auto;
+}
+#final{
+    text-align: center;
+}
+#timer{
+    text-align: center;
+}

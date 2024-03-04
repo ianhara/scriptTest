@@ -37,11 +37,11 @@ var questions = [
           questionText: "What happens when you forget to end a statement in JavaScript?",
           answers: [
             "The computer explodes",
-            "The statement is automatically ended for you",
+            "Javascript handles it automatically",
             "An error occurs",
             "Nothing happens"
           ],
-          key: "An error occurs",
+          key: "Javascript handles it automatically",
         },
 ];
 
@@ -81,6 +81,10 @@ function showQuestion() {
             quizTime-=20
         }
         questionIndex++
+        if(questionIndex===4){
+            displayFinal()
+            return
+        }
         showQuestion()
     })
 
@@ -105,6 +109,9 @@ function startTime() {
 }
 //once display final is triggered we want to display score as time left
 function displayFinal() {
-  var final = document.getElementById("final");
+    //clear out final question and answers
+    answersEl.innerHTML=""
+    questionEl.textContent=""
+  var final = document.getElementById("finalScore");
   final.textContent = "final score: " + quizTime;
 }
