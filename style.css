@@ -1,32 +1,32 @@
-h1{
-    text-align: center;
-    background-color: aqua;
-    border-radius: solid black 5px;
+h1 {
+  text-align: center;
+  background-color: aqua;
+  border-radius: solid black 5px;
 }
-#quiz{
-    text-align: center;
+#quiz {
+  text-align: center;
 }
-#startBtn{
-    display:block;
-    margin: 0 auto;
+#startBtn {
+  display: block;
+  margin: 0 auto;
 }
-#final{
-    text-align: center;
+#final {
+  text-align: center;
 }
-#timer{
-    text-align: center;
+#timer {
+  text-align: center;
 }
-#highScore{
-    display: none;
+#highScore {
+  display: none;
 }
-#answers{
-    align-items: center;
-    flex-direction: column;
-    display: flex;
+#answers {
+  align-items: center;
+  flex-direction: column;
+  display: flex;
 }
-#answers button{
-    width: 200px;;
+#answers button {
+  width: 200px;
 
-    display: block;
-    text-align: center;
+  display: block;
+  text-align: center;
 }
