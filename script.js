@@ -5,7 +5,7 @@ var quizTime = 120;
 var answersEl = document.getElementById("answers");
 //element for the question text
 var questionEl = document.getElementById("question");
-
+//grab button from html
 var startBtn = document.getElementById("startBtn");
 //if start button clicked run startTime
 startBtn.addEventListener("click", startTime);
@@ -51,6 +51,7 @@ var questions = [
   },
 ];
 
+//function to display question and answers
 function showQuestion() {
   //current question from array
   var currentQuestion = questions[questionIndex];
@@ -70,7 +71,7 @@ function showQuestion() {
     //append to be displayed
     answersEl.appendChild(button);
 
-    //on click see if answer == key, else subtract time
+    //event listener on click see if answer == key, else subtract time
     button.addEventListener("click", function (event) {
       var choice = event.target.textContent;
       var correct = currentQuestion.key;
@@ -127,6 +128,7 @@ function displayFinal() {
   //allow user to store initials and score
 }
 
+//add event listener on submit save initials in ul and display score
 var form = document.getElementById("highScore");
 form.addEventListener("submit", function (event) {
   event.preventDefault();
