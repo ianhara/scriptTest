@@ -108,6 +108,8 @@ function startTimer() {
 }
 //runs showQuestion and Start timer removes start quiz button
 function startTime() {
+    questionIndex=0;
+    quizTime=120;
     startBtn.style.display = "none"
   showQuestion();
   startTimer();
@@ -117,8 +119,40 @@ function displayFinal() {
     //clear out final question and answers
     answersEl.innerHTML=""
     questionEl.textContent=""
+
     //stop timer
     clearInterval(interval)
+    var form = document.getElementById("highScore")
+    form.style.display="block"
   var final = document.getElementById("finalScore");
   final.textContent = "final score: " + quizTime;
+  //brings back start button to retake quiz
+  startBtn.style.display = "block"
+  //allow user to store initials and score
+  
+  
+
 }
+
+    var form = document.getElementById("highScore")
+    form.addEventListener("submit",function(event){
+        event.preventDefault()
+        var initials = document.getElementById("initial").value
+        var userScore = quizTime
+        var scoreLi = document.createElement("li")
+        scoreLi.textContent = initials + " " + userScore
+       var scores =  document.getElementById("list")
+       
+       scores.appendChild(scoreLi)
+        scores.style.display="block"
+        //clear form
+        form.reset()
+        questionIndex=0
+        quizTime=120
+    })
+    
+   
+
+        
+    
+

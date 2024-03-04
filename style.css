@@ -16,3 +16,6 @@ h1{
 #timer{
     text-align: center;
 }
+#highScore{
+    display: none;
+}
