@@ -106,8 +106,9 @@ function startTimer() {
     }
   }, 1000);
 }
-//runs showQuestion and Start timer
+//runs showQuestion and Start timer removes start quiz button
 function startTime() {
+    startBtn.style.display = "none"
   showQuestion();
   startTimer();
 }

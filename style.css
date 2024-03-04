@@ -1,5 +1,7 @@
 h1{
     text-align: center;
+    background-color: aqua;
+    border-radius: solid black 5px;
 }
 #quiz{
     text-align: center;
