@@ -1,9 +1,11 @@
     //global vars
+    var interval;
   var quizTime = 120;
   //element for answer buttons
   var answersEl = document.getElementById("answers");
   //element for the question text
   var questionEl = document.getElementById("question");
+  
 var startBtn = document.getElementById("startBtn");
 //if start button clicked run startTime
 startBtn.addEventListener("click", startTime);
@@ -95,7 +97,7 @@ function showQuestion() {
 //starts timer and stops upon 0 time left and runs displayFinal
 function startTimer() {
   var displayTimer = document.getElementById("timer");
-  var interval = setInterval(function () {
+   interval = setInterval(function () {
     quizTime--;
     displayTimer.textContent = "time left: " + quizTime + "seconds";
     if (quizTime <= 0) {
@@ -114,6 +116,8 @@ function displayFinal() {
     //clear out final question and answers
     answersEl.innerHTML=""
     questionEl.textContent=""
+    //stop timer
+    clearInterval(interval)
   var final = document.getElementById("finalScore");
   final.textContent = "final score: " + quizTime;
 }
