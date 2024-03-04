@@ -147,8 +147,7 @@ function displayFinal() {
         scores.style.display="block"
         //clear form
         form.reset()
-        questionIndex=0
-        quizTime=120
+       
     })
     
    
